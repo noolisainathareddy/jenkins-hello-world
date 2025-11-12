@@ -7,6 +7,9 @@ pipeline {
         stage('Maven clean') {
             steps {
                 sh "mvn clean package -DskipTests=true"
+                sh """
+                    echo SLEEP_TIME: ${params.SLEEP_TIME} BRANCH: ${params.BRANCH_NAME}
+                """
             }
         }
         stage('Test') {
