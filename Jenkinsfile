@@ -14,5 +14,18 @@ pipeline {
                 sh "mvn test"
             }
         }
+        stage('Local Deployment') {
+            steps {
+                sh """ echo "Done with loacal deployement" """
+            }
+        }
+        stage('Integration Testing'){
+            steps {
+                sh """
+                    echo "Done Integration Testing"
+                """
+            }
+        }
+
     }
 }
